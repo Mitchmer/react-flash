@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /Users/mitchellmerrell/.yarn/bin/yarn.js add babel-core babel-loader babel-preset-latest babel-preset-state-2 babel-preset-react webpack styled-components react react-dom --dev
+  /usr/local/bin/node /Users/mitchellmerrell/.yarn/bin/yarn.js build:prod
 
 PATH: 
   /Users/mitchellmerrell/.yarn/bin:/Users/mitchellmerrell/.config/yarn/global/node_modules/.bin:/Users/mitchellmerrell/arc/arcanist/bin:~/.npm-global/bin:/Users/mitchellmerrell/.rbenv/shims:/Applications/Postgres.app/contents/versions/9.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -25,11 +25,30 @@ npm manifest:
       "url": "https://github.com/mitchmer/react-flash"
     },
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "build:dev": "NODE_ENV=development webpack",
+      "build:prod": "NODE_ENV=production webpack -p",
+      "prepublish": "npm run build:prod"
     },
     "keywords": [],
     "author": "",
-    "license": "MIT"
+    "license": "MIT",
+    "peerDependencies": {
+      "react": "^16.3.2",
+      "react-dom": "^16.3.2",
+      "styled-components": "^3.2.6"
+    },
+    "devDependencies": {
+      "babel-core": "^6.26.0",
+      "babel-loader": "^7.1.4",
+      "babel-preset-latest": "^6.24.1",
+      "babel-preset-react": "^6.24.1",
+      "babel-preset-stage-2": "^6.24.1",
+      "react": "^16.3.2",
+      "react-dom": "^16.3.2",
+      "styled-components": "^3.2.6",
+      "webpack": "^4.6.0",
+      "webpack-cli": "^2.0.14"
+    }
   }
 
 yarn manifest: 
@@ -39,11 +58,16 @@ Lockfile:
   No lockfile
 
 Trace: 
-  Error: Couldn't find package "babel-preset-state-2" on the "npm" registry.
-      at new MessageError (/Users/mitchellmerrell/.yarn/lib/cli.js:186:110)
-      at NpmResolver.<anonymous> (/Users/mitchellmerrell/.yarn/lib/cli.js:51625:15)
-      at Generator.next (<anonymous>)
-      at step (/Users/mitchellmerrell/.yarn/lib/cli.js:98:30)
-      at /Users/mitchellmerrell/.yarn/lib/cli.js:109:13
-      at <anonymous>
-      at process._tickCallback (internal/process/next_tick.js:160:7)
+  Error: Command failed.
+  Exit code: 127
+  Command: sh
+  Arguments: -c NODE_ENV=production webpack -p
+  Directory: /Users/mitchellmerrell/Desktop/dpl/week11/react-flash
+  Output:
+  
+      at ProcessTermError.MessageError (/Users/mitchellmerrell/.yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/Users/mitchellmerrell/.yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/Users/mitchellmerrell/.yarn/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:160:13)
+      at maybeClose (internal/child_process.js:943:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
