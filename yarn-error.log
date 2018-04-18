@@ -1,0 +1,49 @@
+Arguments: 
+  /usr/local/bin/node /Users/mitchellmerrell/.yarn/bin/yarn.js add babel-core babel-loader babel-preset-latest babel-preset-state-2 babel-preset-react webpack styled-components react react-dom --dev
+
+PATH: 
+  /Users/mitchellmerrell/.yarn/bin:/Users/mitchellmerrell/.config/yarn/global/node_modules/.bin:/Users/mitchellmerrell/arc/arcanist/bin:~/.npm-global/bin:/Users/mitchellmerrell/.rbenv/shims:/Applications/Postgres.app/contents/versions/9.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.5.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "react-flash",
+    "version": "1.0.0",
+    "description": "A self-destructing react component",
+    "main": "./dist/index.js",
+    "homepage": "https://github.com/mitchmer/react-flash",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/mitchmer/react-flash"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Couldn't find package "babel-preset-state-2" on the "npm" registry.
+      at new MessageError (/Users/mitchellmerrell/.yarn/lib/cli.js:186:110)
+      at NpmResolver.<anonymous> (/Users/mitchellmerrell/.yarn/lib/cli.js:51625:15)
+      at Generator.next (<anonymous>)
+      at step (/Users/mitchellmerrell/.yarn/lib/cli.js:98:30)
+      at /Users/mitchellmerrell/.yarn/lib/cli.js:109:13
+      at <anonymous>
+      at process._tickCallback (internal/process/next_tick.js:160:7)
